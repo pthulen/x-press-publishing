@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 4000;
 
 const bodyParser = require('body-parser');
 const errorhandler = require('errorhandler');
@@ -19,11 +19,11 @@ app.use(morgan('dev'));
 
 app.use('/api', apiRouter);
 
-
+app.use(errorhandler());
 //serves the files in public
 //app.use(express.static('public'));
 
-app.use(errorhandler());
+
 
 
 //server listening 
